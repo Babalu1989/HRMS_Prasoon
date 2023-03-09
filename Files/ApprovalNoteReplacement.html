@@ -1,0 +1,221 @@
+﻿<html lang='en'>
+<head>
+    <title></title>
+</head>
+<body>
+    <div id='container' style="font: normal 18px/1.4em 'Open Sans', Sans-serif; margin: 0 auto; min-height: 20016px; background-size: 100% auto; color: #5B6165; position: relative;">
+
+        <table width='100%' height='500%' style='width: 100%; font-size: 9px; min-height: 500%;' cellpadding='8'>
+            <tr style='width: 100%; font-size: 9px; min-height: 250%;'>
+                <td>
+                    <fieldset style="border: 2px solid #000;">
+                        <legend></legend>
+                        <table width='100%' height='500%' style='width: 100%; font-size: 9px; min-height: 500%;' border="1" cellpadding='8'>
+
+                            <tr>
+                                <td>
+
+                                    <section id='Section3' style='padding-top: 5px; margin: 0 0 0 60px; height: 60px;'>
+                                        <table style='width: 100%;' border='0'>
+
+                                            <tr>
+                                                <td width="25%" style='width: 20%'>
+                                                    <div class='logo' style='float: left; margin-right: 20px;'>
+                                                        <img src='{ImgLogo}' style='width: 100%; height: 100%; width: 150px;' />
+                                                    </div>
+                                                </td>
+                                                <td width="50%" style="width: 60%;"><span id='Span2' style='text-align: center; line-height: 0.88em; display: inline-block; min-width: 20px; margin-left: 10px; font-size: 12px; position: relative; top: -5px;'><strong><u>Approval Note</u></strong></span></td>
+                                                <td width="25%" style='width: 20%' cellpadding='5' cellspacing='5'></td>
+                                            </tr>
+                                        </table>
+                                    </section>
+
+
+
+                                    <div class='clearfix'></div>
+                                    <section id='Section4' class='invoice-info' style='float: left; margin: 0px 40px 0 60px;'>
+                                        <table cellpadding='1' cellspacing='2' style='width: 100%; border-color: gray;' border='0'>
+
+                                            <tr style="border: dashed">
+                                                <td style='width: 33.33%'><span style='font-weight: bold;'>Division :</span> <span>{Division}</span></td>
+                                                <td style='width: 33.33%'>&nbsp;</td>
+                                                <td style='width: 33.33%'><span style='font-weight: bold;'>Application Date:</span> <span>{app_date}</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td style='width: 33.33%'><span style='font-weight: bold;'>Approval Note No.:</span> <span>{ref_no}</span></td>
+                                                <td style='width: 33.33%'>&nbsp;</td>
+                                                <td style='width: 33.33%'><span style='font-weight: bold;'>Print Date &amp; Time:</span> <span>{printdate}</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2"><span style='font-weight: bold;'></span></td>
+                                                <td style='width: 33.33%'>&nbsp;</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td colspan="3">&nbsp; 
+                                                    <div class='clearfix' style="color: white">.</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="3"><span style='font-weight: bold;'>Reg: Approval for hiring {noposition} {position} for {dept} Department against {emptype} Replacement {Replacementname}.</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="3"><span style='font-weight: bold;'></span></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td colspan="3"><span>Mr. {hod} forwarded a manpower requisition form approved by Mr. {app} for hiring {noposition} {position} for {dept} department against replacement of {emptype} Resources  {Replacementname}, who superannuated on ______________________.</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="3"><span style='font-weight: bold;'></span></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td colspan="3"><span>The Manpower Review Committee reviewed and found the requirement justified. Load has increased____________ in the department from Last year, __________ bills got processed in_______________.</span></td>
+                                            </tr>
+                                            <tr>                                                
+                                                <td colspan="3">
+                                                    <table>
+                                                        <tr><td><span style="margin-left: 10px;"><b>Requirement </b></span></td>
+                                                            <td><span>: {reqtype}</span></td>
+                                                        </tr>
+                                                         <tr><td><span style="margin-left: 10px;"><b>Period of this position</b></span></td>
+                                                            <td><span>: Regular requirement but on contract basis for {period}</span></td>
+                                                        </tr>
+                                                         <tr><td><span style="margin-left: 10px;"><b>No of Approved Requirement</b></span></td>
+                                                            <td><span>: {noposition}</span></td>
+                                                        </tr>
+                                                         <tr><td><span style="margin-left: 10px;"><b>Minimum Wage Category </b></span></td>
+                                                            <td><span>: {wages}</span></td>
+                                                        </tr>
+                                                         <tr><td><span style="margin-left: 10px;"><b>Budget Requirement </b> </span></td>
+                                                            <td><span>: Cost Center {costcenter}</span></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>                                            
+                                            <tr>
+                                                <td colspan="3">&nbsp;<div class='clearfix' style="color: white">.</div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td colspan="3"><span><u>Transfer of Budget:</u></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="3"><span style="margin-left: 30px;">Tender Rate for Graduate & Above Category (Per Month) :</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="3"><span style="margin-left: 30px;">Annual Budget required for hiring  {noposition} {position} in SLA(incl GPA & GST)  :</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="3"><span style="margin-left: 30px;">Budget Required for FY ........ for hiring {noposition} {position} :</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="3">&nbsp;<div class='clearfix' style="color: white">.</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="3"><span>Approval required for hiring&nbsp; {noposition} {position} and Additional Budget of Rs. .......... against the cost center {costcenter} . Rates are as per the rates finalized in the tender, which may subject to change based on the Delhi Govt. Minimum Wage revision and Tender.</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="3">&nbsp;<div class='clearfix' style="color: white">.</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="3">&nbsp;<span>Submitted for approval please.</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="3">
+                                                    <table border="1" style="width: 100%; text-align: center">
+                                                        <tr>
+                                                            <td style="width: 33%;"><span>Member Secretary  Resource Planning:</span></td>
+                                                            <td style="width: 33%;"><div class='clearfix' style="color: white">.</div></td>
+                                                            <td style="width: 33%;"><div class='clearfix' style="color: white">.</div></td>
+                                                        </tr>
+                                                         <tr>
+                                                            <td style="width: 33%;"><div class='clearfix'>{ONMDetail}</div></td>
+                                                            <td style="width: 33%;"><div class='clearfix'>{BUSINESSDetail}</div></td>
+                                                            <td style="width: 33%;"><div class='clearfix'>{AUDITDetail}</div></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width: 33%;">O&M</td>
+                                                            <td style="width: 33%;">Business</td>
+                                                            <td style="width: 33%;">Audit</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width: 33%;"><div class='clearfix'>{HRDetail}</div></td>
+                                                            <td style="width: 33%;"><div class='clearfix'>{BUDGETDetail}</div></td>
+                                                            <td style="width: 33%;"><div class='clearfix'>{FNADetail}</div></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width: 33%;">HR</td>
+                                                            <td style="width: 33%;">Budget</td>
+                                                            <td style="width: 33%;">F&A</td>
+                                                        </tr>
+                                                         <tr>
+                                                            <td style="width: 33%;"><div class='clearfix'>{CHAIRMANDetail}</div></td>
+                                                            <td style="width: 33%;"><div class='clearfix'>.</div></td>
+                                                            <td style="width: 33%;"><div class='clearfix'>.</div></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width: 33%;">C&M (Chairman)</td>
+                                                            <td style="width: 33%;"></td>
+                                                            <td style="width: 33%;">CFO</td>
+                                                        </tr>
+                                                         <tr>
+                                                            <td style="width: 33%;"><div class='clearfix'>.</div></td>
+                                                            <td style="width: 33%;"><div class='clearfix'>.</div></td>
+                                                            <td style="width: 33%;"><div class='clearfix'>.</div></td>
+                                                        </tr>                       
+                                                         <tr>                      
+                                                            <td style="width: 33%;"><div class='clearfix'>.</div></td>
+                                                            <td style="width: 33%;"><div class='clearfix'>.</div></td>
+                                                            <td style="width: 33%;"><div class='clearfix'>.</div></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width: 33%;"><b>CTA</b></td>
+                                                            <td style="width: 33%;"></td>
+                                                            <td style="width: 33%;"><b>CEO</b></td>
+                                                        </tr>
+
+                                                    </table>
+                                                </td>
+                                            </tr>
+
+
+                                        </table>
+
+                                    </section>
+                                </td>
+                            </tr>
+
+
+                        </table>
+                    </fieldset>
+
+
+                    <span style="font-size: 5.3px;">Regd.Office :BSES Rajdhani Power Ltd(A joint venture of Reliance Infrastructure Ltd & Govt.of NCT of Delhi)BSES Bhawan,Nehru Place,NEW DELHI-110019<br />
+                        CIN No:U40109DL2001PLC111527,Telephone No:011-3999 9707, Fax No:011-3999 9890, Email:brpl.customercare@relianceada.com, Website:www.bsesdelhi.com</span>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+
+                </td>
+            </tr>
+
+        </table>
+
+
+    </div>
+
+
+</body>
+</html>

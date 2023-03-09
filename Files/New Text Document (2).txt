@@ -1,0 +1,16 @@
+
+        if v_cnt = '0' then
+        
+                select to_char(sysdate,'mmrr')||
+                (SELECT SCHM_DIV_CODE FROM TBL_DIVISION_MASTER WHERE DIVISION_CODE = p_TEXT5)||
+                (SELECT SHRT_NM FROM DP_SCHM_DD_TYPE WHERE ID = p_TEXT4)||
+                lpad(DS_REFNO.nextval,'3','0') INTO v_refno from dual;
+        
+                insert into dp_schm_request
+                (sr_no,ref_no,ca_no,ca_nm,mobile_no,address,complaint_typ,div,sub_div,insrtby,ALT_MOBILE_NO,EMAIL_ID,GST_NO,APPLICANT_NAME,RECMDTN,mtr_no)
+                values ((select nvl(max(sr_no),0)+1 from dp_schm_request),
+                v_refno,p_CANO,trim(p_TEXT1),p_TEXT2,trim(p_TEXT3),p_TEXT4,p_TEXT5,p_TEXT6,p_INSRTBY,p_TEXT12,p_TEXT13,p_TEXT14,trim(p_TEXT15),p_TEXT7,ltrim(p_TEXT8,'0'));
+                    
+                commit;
+                
+         end if;

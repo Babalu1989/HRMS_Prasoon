@@ -1,0 +1,383 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Mainmaster.master" AutoEventWireup="true" CodeFile="Attendance.aspx.cs" Inherits="Attendance" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <input type="hidden" id="hdnselectvalue" />
+        <div class="row">
+        <div class="col-lg-12">
+             <table class="auto-style1">
+                 <caption style="font-weight: 700; text-align: left; color: #FF3300; font-size: small;">Attendance System :</caption>
+                 <tr>
+                     <td style="text-align: right">
+                         <table align="right" class="auto-style3">
+                             <tr>
+                                 <td style="width: 10%">
+                                     <asp:Label ID="lbl_1" runat="server" CssClass="GridText" style="text-align: center" Visible="False" Width="110px"></asp:Label>
+                                 </td>
+                                 <td style="width: 10%">
+                                     <asp:Label ID="lbl_2" runat="server" CssClass="GridText" style="text-align: center" Visible="False" Width="150px"></asp:Label>
+                                 </td>
+                                 <td style="width: 10%">
+                                     <asp:Label ID="lbl_cm" runat="server" CssClass="GridText" style="text-align: center" Visible="False" Width="150px"></asp:Label>
+                                 </td>
+                                 <td style="width: 5%">
+                                     <asp:Label ID="lbl_sdo" runat="server" CssClass="GridText" Text="SDO/L1:" Visible="False" Width="100%"></asp:Label>
+                                 </td>
+                                 <td style="width: 12%">
+                                     <asp:Button ID="btn_l1" runat="server" CssClass="ButtonFace" OnClick="btn_l1_Click" Text="Submit For Approval" ToolTip="Attendance Forward to Level 2" Visible="False" Width="100%" />
+                                 </td>
+                                 <td style="width: 10%">
+                                     <asp:Label ID="lbl_l2" runat="server" Style="font-size: small; text-align: right" Text="Pending Approval" Visible="False" Width="100%"></asp:Label>
+                                 </td>
+                                 <td style="width: 8%">
+                                     <asp:DropDownList ID="ddl_l2" runat="server" CssClass="GridText" Visible="False" Width="100%">
+                                         <asp:ListItem Value="--Select--">--Select--</asp:ListItem>
+                                         <asp:ListItem Value="2">Approved</asp:ListItem>
+                                         <asp:ListItem Value="0">Rejected</asp:ListItem>
+                                     </asp:DropDownList>
+                                 </td>
+                                 <td style="width: 8%">
+                                     <asp:Button ID="btn_l2" runat="server" CssClass="ButtonFace" OnClick="btn_l2_Click" Text="Approved" ToolTip="Attendance Forward to final Approval" Visible="False" Width="100%" />
+                                 </td>
+                                 <td style="width: 5%">
+                                     <asp:Label ID="lbl_cnm" runat="server" CssClass="GridText"  Text="C&amp;M/HR" Visible="False" Width="100%"></asp:Label>
+                                 </td>
+                                 <td style="width: 7%">
+                                     <asp:DropDownList ID="ddl_final" runat="server" CssClass="GridText" Visible="False" Width="100%">
+                                         <asp:ListItem Value="--Select--">--Select--</asp:ListItem>
+                                         <asp:ListItem Value="3">Approve</asp:ListItem>
+                                     </asp:DropDownList>
+                                 </td>
+                                 <td style="width: 8%">
+                                     <asp:Button ID="btn_final" runat="server" CssClass="ButtonFace" OnClick="btn_final_Click" Text="Processed" ToolTip="Attendance Forward to final Approval" Visible="False" Width="100%" />
+                                 </td>
+                                 <td style="width: 10%">
+                                     <asp:Button ID="btn_export" runat="server" CssClass="ButtonFace" OnClick="btn_export_Click" Text="Export" Visible="False" Width="100%" />
+                                 </td>
+                             </tr>
+                         </table>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>
+                         <table class="auto-style1">
+                             <tr>
+                                 <td style="width: 20%">&nbsp;</td>
+                                 <td>
+                                     <table align="center" class="auto-style1">
+                                         <tr>
+                                              <td style="width: 5%">
+                                                 <asp:Label ID="Label191" runat="server" CssClass="GridText"  Text="Months" Width="70px"></asp:Label>
+                                             </td>
+                                             <td style="width: 10%">
+                                                 <asp:DropDownList ID="ddl_months_list" runat="server" AutoPostBack="true" CssClass="GridText" Font-Bold="False" OnSelectedIndexChanged="ddl_months_list_SelectedIndexChanged" Width="90px">
+                                                     <asp:ListItem Text="--Select--" Value="0" />                                                                                                      
+                                                     <asp:ListItem Text="November" Value="Nov" />
+                                                      <asp:ListItem Text="December" Value="Dec" />
+                                                 </asp:DropDownList>
+                                             </td>
+                                             <td style="width: 5%">
+                                                 <asp:Label ID="lbl_div" runat="server" CssClass="GridText"  Width="80px"></asp:Label>
+                                             </td>
+                                             <td style="width: 15%">
+                                                 <asp:DropDownList ID="ddl_div" runat="server" AutoPostBack="True" CssClass="GridText" OnSelectedIndexChanged="ddl_div_SelectedIndexChanged" Width="120px">
+                                                     <asp:ListItem Text="--Select--" Value="0" />
+                                                 </asp:DropDownList>
+                                             </td>
+                                             <td style="width: 5%">
+                                                 <asp:Label ID="Label190" runat="server" CssClass="GridText" Text="Project List" Width="80px"></asp:Label>
+                                             </td>
+                                             <td style="width: 15%">
+                                                 <asp:DropDownList ID="ddl_project_list" runat="server" AutoPostBack="True" CssClass="GridText" OnSelectedIndexChanged="ddl_project_list_SelectedIndexChanged" Width="120px">
+                                                     <asp:ListItem Text="--Select--" Value="0" />
+                                                 </asp:DropDownList>
+                                             </td>
+                                             <td style="width: 10%">
+                                                 <asp:Label ID="Label192" runat="server" CssClass="GridText" Text="Vendor List" Width="80px"></asp:Label>
+                                             </td>
+                                             <td style="width: 30%">
+                                                 <asp:DropDownList ID="ddl_vendor_list" runat="server" AutoPostBack="True" CssClass="GridText" OnSelectedIndexChanged="ddl_vendor_list_SelectedIndexChanged" Width="202px">
+                                                     <asp:ListItem Text="--Select--" Value="0" />
+                                                 </asp:DropDownList>
+                                             </td>
+                                            
+                                         </tr>
+                                         <tr>
+                                             <td colspan="8">
+                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="ddl_months_list" ErrorMessage="* Please select an item." ForeColor="Red" InitialValue="Choose One"></asp:RequiredFieldValidator>
+                                             </td>
+                                         </tr>
+                                     </table>
+                                 </td>
+                                 <td style="width: 20%">&nbsp;</td>
+                             </tr>
+                         </table>
+                     </td>
+                 </tr>
+                 </table>
+        </div></div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="table-responsive">
+                  <div id="gridtablediv" class="customtextdatatable" style="margin-left: -40px;"></div>
+          <%--      <table  class="table table-striped custom-table table-nowrap mb-0" name="employeerow" id="employeerowid">
+                    <thead>
+                        <tr>
+                            <th>Employee</th>
+                            <th>1<br />
+                                <select class="form-control" onchange="functionattendancechange(this);">
+                                    <option value="1">G</option>
+                                    <option value="2">I</option>
+                                    <option value="1">II</option>
+                                    <option value="1">III</option>
+                                    <option value="1">L</option>
+                                    <option value="1">H</option>
+                                </select></th>
+                            <th>2</th>
+                            <th>3</th>
+                            <th>4</th>
+                            <th>5</th>
+                            <th>6</th>
+                            <th>7</th>
+                            <th>8</th>
+                            <th>9</th>
+                            <th>10</th>
+                            <th>11</th>
+                            <th>12</th>
+                            <th>13</th>
+                            <th>14</th>
+                            <th>15</th>
+                            <th>16</th>
+                            <th>17</th>
+                            <th>18</th>
+                            <th>19</th>
+                            <th>20</th>
+                            <th>22</th>
+                            <th>23</th>
+                            <th>24</th>
+                            <th>25</th>
+                            <th>26</th>
+                            <th>27</th>
+                            <th>28</th>
+                            <th>29</th>
+                            <th>30</th>
+                            <th>31</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <h2 class="table-avatar">
+                                    <a class="avatar avatar-xs" href="profile.html">
+                                        <img alt="" src="assets/img/profiles/avatar-09.jpg"></a>
+                                    <a href="profile.html">John Doe</a>
+                                </h2>
+                            </td>
+                            <td> <select class="form-control">
+                                    <option value="1">G</option>
+                                    <option value="2">I</option>
+                                    <option value="1">II</option>
+                                    <option value="1">III</option>
+                                    <option value="1">L</option>
+                                    <option value="1">H</option>
+                                </select></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td>
+                                <div class="half-day">
+                                    <span class="first-off"><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></span>
+                                    <span class="first-off"><i class="fa fa-close text-danger"></i></span>
+                                </div>
+                            </td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><i class="fa fa-close text-danger"></i></td>
+                            <td><i class="fa fa-close text-danger"></i></td>
+                            <td><i class="fa fa-close text-danger"></i></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><i class="fa fa-close text-danger"></i></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td>
+                                <div class="half-day">
+                                    <span class="first-off"><i class="fa fa-close text-danger"></i></span>
+                                    <span class="first-off"><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></span>
+                                </div>
+                            </td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><i class="fa fa-close text-danger"></i></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><i class="fa fa-close text-danger"></i></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h2 class="table-avatar">
+                                    <a class="avatar avatar-xs" href="profile.html">
+                                        <img alt="" src="assets/img/profiles/avatar-09.jpg"></a>
+                                    <a href="profile.html">Richard Miles</a>
+                                </h2>
+                            </td>
+                            <td>  <select class="form-control">
+                                    <option value="1">G</option>
+                                    <option value="2">I</option>
+                                    <option value="1">II</option>
+                                    <option value="1">III</option>
+                                    <option value="1">L</option>
+                                    <option value="1">H</option>
+                                </select></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><i class="fa fa-close text-danger"></i></td>
+                            <td><i class="fa fa-close text-danger"></i></td>
+                            <td><i class="fa fa-close text-danger"></i></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><i class="fa fa-close text-danger"></i></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><i class="fa fa-close text-danger"></i></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><i class="fa fa-close text-danger"></i></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
+                        </tr>
+                    </tbody>
+                </table>--%>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function functionattendancechange(obj) {
+            debugger;
+            //var attendancecalue = document.getElementById('hdnselectvalue').value;
+            var attendancecalue = obj.options[obj.selectedIndex].value;            
+            $('select[name="employeerow"]').each(function () {
+                var id = $(this).attr('id');
+                $("#" + id).removeAttr("disabled");/**/
+                if ($("#" + id).is(':disabled')) {
+                    //alert('disabled');
+                }
+                else {
+                    if ($('#backfeedsource').val() == "BY MOBILE TRANSFORMER")
+                    { $("#" + id).html('<option value="MOBILE TRANSFORMER:MOB01">MOBILE TRANSFORMER:MOB01</option>'); }
+                    else
+                    {
+                        if ($('#backfeedsource').val() == "BY FEEDER") {
+                            $("#" + id).html(feedername);
+                        }
+                        else { $("#" + id).html(""); }
+                    }
+                }
+            })
+
+        }
+    </script>
+      <script>
+          //$(document).ready(function () {
+          //    getedatatble();
+
+          //});
+
+          function getedatatble() {
+              $.ajax({
+                  type: "POST",
+                  url: "Attendance.aspx/bindata",
+                  dataType: "json",
+                  data: JSON.stringify({ typ: "5", vendor: "", project: "" }),
+                  contentType: "application/json",
+                  success: function (data) {
+                      console.log("data", data);
+                      var empdetails = eval(data.d);
+                      if (data.d.length > 0) {
+                          $('#gridtablediv').html('');
+                          debugger;
+                          var gridtable = '  <table id="gridtable"  class="table table-striped custom-table datatable dataTable no-footer" role="grid">';
+                          var col = [];
+                          var colHeader = [];
+                          var th = '';
+                          var fault = eval(empdetails[0]);
+                          for (var i = 0; i < fault.length; i++) {
+                              for (var key in fault[i]) {
+                                  if (col.indexOf(key) === -1) {
+                                      col.push(key);
+                                      colHeader.push({ data: key, title: key })
+
+                                      th += '<th>' + key + '</th>';
+                                  }
+                              }
+                          }
+
+                          gridtable += '  <thead> <tr>' + th + '</tr></thead>';
+
+                          var srNo = 1;
+                          var tempDiv = '';
+                          var td = '';
+                          for (var i = 0; i < fault.length; i++) {
+                              var trclass = '';
+                              if ((i % 2) == 0) {
+                                  trclass = 'class=""';
+                              }
+                              td += ' <tr ' + trclass + '>';
+                              for (var j = 0; j < col.length; j++) {
+                                  td += '<td>' + fault[i][col[j]] + '</td>';
+                              }
+                              td += ' </tr>';
+                          }
+                          gridtable += '  <tbody> ' + td + '</tbody>';
+                          gridtable += ' </table>';
+                          $('#gridtablediv').append(gridtable);
+                          var groupColumn = 0;
+                          $('#gridtable').DataTable({
+                              columnDefs: [
+                              {
+                                  'visible': false, 'targets': [6, 7],
+                              },
+                              ],
+                              "scrollCollapse": true, dom: 'Bfrtip',
+                              buttons: [
+                                   //{
+                                   //    extend: 'excelHtml5',
+                                   //    title: 'Data export'
+                                   //},
+                                 'excel',
+                              ],
+                              lengthMenu: [
+                               [5]
+                              ],
+                          });
+                      }
+                  }
+              });
+          }
+              </script>
+</asp:Content>
+
+

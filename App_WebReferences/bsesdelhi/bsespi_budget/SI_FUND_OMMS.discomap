@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://bsespi.bsesdelhi.co.in:50000/dir/wsdl?p=sa/b0a6d172473c33d79f461a4a9b63b0b1" filename="SI_FUND_OMMS.wsdl" />
+  </Results>
+</DiscoveryClientResultsFile>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:p1="http://rel.com/xi/SAPR3/FUND_OMMS" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" name="SI_FUND_OMMS" targetNamespace="http://rel.com/xi/SAPR3/FUND_OMMS" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation />
+  <wsp:UsingPolicy wsdl:required="true" />
+  <wsp:Policy wsu:Id="OP_SI_FUND_OMMS" />
+  <wsdl:types>
+    <xsd:schema xmlns="http://rel.com/xi/SAPR3/FUND_OMMS" targetNamespace="http://rel.com/xi/SAPR3/FUND_OMMS" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="MT_FUND_RES" type="p1:DT_FUND_RES" />
+      <xsd:element name="MT_FUND_REQ" type="p1:DT_FUND_REQ" />
+      <xsd:complexType name="DT_FUND_RES">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="EN">PGPO RES</xsd:documentation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">24ce6b4916bc11eb883d0000001a7156</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="ZFUND_OMMS">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">ff4dd02cb9ad11e99b3adc536077fa0c</xsd:appinfo>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" maxOccurs="unbounded" name="IT_ITEM">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">ff4dd02bb9ad11e99ecadc536077fa0c</xsd:appinfo>
+                  </xsd:annotation>
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element minOccurs="0" name="COMPANY_CODE" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">ff4cfb0bb9ad11e9cf03dc536077fa0c</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element minOccurs="0" name="ACCOUNT_NUMBER" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">ff4cfb0cb9ad11e9c1c2dc536077fa0c</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element minOccurs="0" name="COST_CENTER" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">ff4cfb0db9ad11e9cf5fdc536077fa0c</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element minOccurs="0" name="FISCAL_YEAR" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">ff4cfb0eb9ad11e9c47fdc536077fa0c</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element minOccurs="0" name="BUDGET_TYPE" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">ff4cfb0fb9ad11e98b87dc536077fa0c</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element minOccurs="0" name="FUND" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">ff4cfb10b9ad11e9a8f6dc536077fa0c</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element minOccurs="0" name="FUND_CENTER" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">ff4cfb11b9ad11e9bc8edc536077fa0c</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element minOccurs="0" name="COMMIT_ITEM" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">df5e7c9616c311ebca0a00090ffe0001</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element minOccurs="0" name="TOTAL_BDGT" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">df5e7c9716c311eb82cd00090ffe0001</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element minOccurs="0" name="CONSUM_BDGT" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">df5e7c9816c311eba16e00090ffe0001</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element minOccurs="0" name="AVLE_BDGT" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">df5e7c9916c311eba4d200090ffe0001</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="RETURN">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">725a63efc25d11e9caff00090ffe0001</xsd:appinfo>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" maxOccurs="unbounded" name="IT_ITEM">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">725a63eec25d11e9ba9c00090ffe0001</xsd:appinfo>
+                  </xsd:annotation>
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element minOccurs="0" name="TYPE" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">725a49d0c25d11e9cd6500090ffe0001</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element minOccurs="0" name="ID" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">725a49d1c25d11e9b4d600090ffe0001</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element minOccurs="0" name="NUMBER" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">725a49d2c25d11e9ca1100090ffe0001</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element minOccurs="0" name="MESSAGE" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">725a49d3c25d11e9869a00090ffe0001</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element minOccurs="0" name="LOG_NO" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">725a49d4c25d11e99cc200090ffe0001</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element minOccurs="0" name="LOG_MSG_NO" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">725a49d5c25d11e9b6f300090ffe0001</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element minOccurs="0" name="MESSAGE_V1" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">725a49d6c25d11e9b4a800090ffe0001</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element minOccurs="0" name="MESSAGE_V2" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">725a49d7c25d11e98a0400090ffe0001</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element minOccurs="0" name="MESSAGE_V3" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">725a49d8c25d11e9a97d00090ffe0001</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element minOccurs="0" name="MESSAGE_V4" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">725a49d9c25d11e9b3f300090ffe0001</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element minOccurs="0" name="PARAMETER" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">725a49dac25d11e9b11a00090ffe0001</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element minOccurs="0" name="ROW" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">725a49dbc25d11e9a5d000090ffe0001</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element minOccurs="0" name="FIELD" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">725a49dcc25d11e9924500090ffe0001</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element minOccurs="0" name="SYSTEM" type="xsd:string">
+                        <xsd:annotation>
+                          <xsd:appinfo source="http://sap.com/xi/TextID">725a63edc25d11e9af3b00090ffe0001</xsd:appinfo>
+                        </xsd:annotation>
+                      </xsd:element>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DT_FUND_REQ">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="EN">DT for Fund OMMS</xsd:documentation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">192b5ecb16bb11eb8b050000001a7156</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="COMP_CODE" type="xsd:string" />
+          <xsd:element name="COST_CENTER" type="xsd:string" />
+          <xsd:element name="GL_ACCOUNT" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="MT_FUND_REQ">
+    <wsdl:documentation />
+    <wsdl:part name="MT_FUND_REQ" element="p1:MT_FUND_REQ" />
+  </wsdl:message>
+  <wsdl:message name="MT_FUND_RES">
+    <wsdl:documentation />
+    <wsdl:part name="MT_FUND_RES" element="p1:MT_FUND_RES" />
+  </wsdl:message>
+  <wsdl:portType name="SI_FUND_OMMS">
+    <wsdl:documentation />
+    <wsdl:operation name="SI_FUND_OMMS">
+      <wsdl:documentation />
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_SI_FUND_OMMS" />
+      </wsp:Policy>
+      <wsdl:input message="p1:MT_FUND_REQ" />
+      <wsdl:output message="p1:MT_FUND_RES" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SI_FUND_OMMSBinding" type="p1:SI_FUND_OMMS">
+    <binding transport="http://schemas.xmlsoap.org/soap/http" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <wsdl:operation name="SI_FUND_OMMS">
+      <operation soapAction="http://sap.com/xi/WebService/soap1.1" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <wsdl:input>
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </wsdl:input>
+      <wsdl:output>
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SI_FUND_OMMSService">
+    <wsdl:port name="HTTP_Port" binding="p1:SI_FUND_OMMSBinding">
+      <address location="http://bsespi.bsesdelhi.co.in:50000/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEL_GIS&amp;receiverParty=&amp;receiverService=&amp;interface=SI_FUND_OMMS&amp;interfaceNamespace=http%3A%2F%2Frel.com%2Fxi%2FSAPR3%2FFUND_OMMS" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </wsdl:port>
+    <wsdl:port name="HTTPS_Port" binding="p1:SI_FUND_OMMSBinding">
+      <address location="https://bsespi.bsesdelhi.co.in:50001/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=DEL_GIS&amp;receiverParty=&amp;receiverService=&amp;interface=SI_FUND_OMMS&amp;interfaceNamespace=http%3A%2F%2Frel.com%2Fxi%2FSAPR3%2FFUND_OMMS" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

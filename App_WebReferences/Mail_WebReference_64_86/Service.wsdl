@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="file_name_as_string">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strFrom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strcc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strbcc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSubject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMessage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="file" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="app" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="user_nm" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="file_name_as_stringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="file_name_as_stringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="file_as_listitem_value_as_Memorystream_text_as_FileName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strFrom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strcc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strbcc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSubject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMessage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="app" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="user_nm" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="file" type="tns:ArrayOfFileAttach" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFileAttach">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FileAttach" nillable="true" type="tns:FileAttach" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FileAttach">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MStream" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="file_as_listitem_value_as_Memorystream_text_as_FileNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="file_as_listitem_value_as_Memorystream_text_as_FileNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sms_service">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strsmsid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strphone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMessage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="app" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="user_nm" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sms_serviceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sms_serviceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemoryStreamFromFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filepath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemoryStreamFromFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMemoryStreamFromFileResult" type="tns:MemoryStream" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MemoryStream">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Stream">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="Capacity" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Stream" abstract="true">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:MarshalByRefObject">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="Position" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="ReadTimeout" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="WriteTimeout" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="MarshalByRefObject" abstract="true" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="file_name_as_stringSoapIn">
+    <wsdl:part name="parameters" element="tns:file_name_as_string" />
+  </wsdl:message>
+  <wsdl:message name="file_name_as_stringSoapOut">
+    <wsdl:part name="parameters" element="tns:file_name_as_stringResponse" />
+  </wsdl:message>
+  <wsdl:message name="file_as_listitem_value_as_Memorystream_text_as_FileNameSoapIn">
+    <wsdl:part name="parameters" element="tns:file_as_listitem_value_as_Memorystream_text_as_FileName" />
+  </wsdl:message>
+  <wsdl:message name="file_as_listitem_value_as_Memorystream_text_as_FileNameSoapOut">
+    <wsdl:part name="parameters" element="tns:file_as_listitem_value_as_Memorystream_text_as_FileNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="sms_serviceSoapIn">
+    <wsdl:part name="parameters" element="tns:sms_service" />
+  </wsdl:message>
+  <wsdl:message name="sms_serviceSoapOut">
+    <wsdl:part name="parameters" element="tns:sms_serviceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMemoryStreamFromFileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMemoryStreamFromFile" />
+  </wsdl:message>
+  <wsdl:message name="GetMemoryStreamFromFileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMemoryStreamFromFileResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="mail_service">
+      <wsdl:input name="file_name_as_string" message="tns:file_name_as_stringSoapIn" />
+      <wsdl:output name="file_name_as_string" message="tns:file_name_as_stringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mail_service">
+      <wsdl:input name="file_as_listitem_value_as_Memorystream_text_as_FileName" message="tns:file_as_listitem_value_as_Memorystream_text_as_FileNameSoapIn" />
+      <wsdl:output name="file_as_listitem_value_as_Memorystream_text_as_FileName" message="tns:file_as_listitem_value_as_Memorystream_text_as_FileNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sms_service">
+      <wsdl:input message="tns:sms_serviceSoapIn" />
+      <wsdl:output message="tns:sms_serviceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMemoryStreamFromFile">
+      <wsdl:input message="tns:GetMemoryStreamFromFileSoapIn" />
+      <wsdl:output message="tns:GetMemoryStreamFromFileSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="mail_service">
+      <soap:operation soapAction="http://tempuri.org/file_name_as_string" style="document" />
+      <wsdl:input name="file_name_as_string">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="file_name_as_string">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mail_service">
+      <soap:operation soapAction="http://tempuri.org/file_as_listitem_value_as_Memorystream_text_as_FileName" style="document" />
+      <wsdl:input name="file_as_listitem_value_as_Memorystream_text_as_FileName">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="file_as_listitem_value_as_Memorystream_text_as_FileName">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sms_service">
+      <soap:operation soapAction="http://tempuri.org/sms_service" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemoryStreamFromFile">
+      <soap:operation soapAction="http://tempuri.org/GetMemoryStreamFromFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="mail_service">
+      <soap12:operation soapAction="http://tempuri.org/file_name_as_string" style="document" />
+      <wsdl:input name="file_name_as_string">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="file_name_as_string">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mail_service">
+      <soap12:operation soapAction="http://tempuri.org/file_as_listitem_value_as_Memorystream_text_as_FileName" style="document" />
+      <wsdl:input name="file_as_listitem_value_as_Memorystream_text_as_FileName">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="file_as_listitem_value_as_Memorystream_text_as_FileName">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sms_service">
+      <soap12:operation soapAction="http://tempuri.org/sms_service" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemoryStreamFromFile">
+      <soap12:operation soapAction="http://tempuri.org/GetMemoryStreamFromFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://10.125.64.86/mail_service/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://10.125.64.86/mail_service/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,138 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.OracleClient;
+using System.Linq;
+using System.Web;
+using System.Web.Services;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class Attendance : System.Web.UI.Page
+{
+    static DataTable dtlogin = new DataTable();
+   static OracleConnection oracon;
+    static OracleConnection oraconstatic;
+    public static DBCONNECTION dbconStatic = new DBCONNECTION();
+    public DBCONNECTION dbcon = new DBCONNECTION();
+    static DataSet ds = new DataSet(); 
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        //oracon = new OracleConnection(ConfigurationManager.ConnectionStrings["connection"].ConnectionString);
+        //if (!Page.IsPostBack)
+        //{
+
+
+        //    dbcon.FillDDLwithproc(ddl_months_list, "proc_hrms_mnth", "1", "");
+
+        //    ddl_months_list.SelectedValue = String.Format("{0:MMM}", DateTime.Now);
+
+
+        //    DataSet ds1 = dbcon.FillDDLwithproctext("proc_hrms_mnth", "2", ddl_months_list.SelectedValue);
+
+        //    txt_yr.Text = ds1.Tables[0].Rows[0]["yr"].ToString();
+
+
+        //    if (usertype == "L1")
+        //    {
+        //        lbl_div.Text = "Sub-Division";
+        //        string qry1 = "select sub_div,sub_div_code from HRMS_SUB_DIV where status = '0' and emp_id ='" + userid + "'";
+        //        dbcon.FillDDL(ddl_div, qry1);
+        //    }
+
+
+        //    if (Request.QueryString.Count == 3)
+        //    {
+        //        ddl_div.SelectedValue = Request.QueryString["C"];
+        //        string qry = "select upper(PROJECT_LIST) as PROJECT_LIST, srno from project_list where STATUS = 0 and srno in (select project_id from HRMS_PRJCT_VEN_EMP_ASSG a, emp_master  b where emp_aadhar = aadhar and sub_div = '" + ddl_div.SelectedValue + "')"; //where USER_DEPARTMENT = 'IT'
+        //        dbcon.FillDDL(ddl_project_list, qry);
+
+        //        ddl_project_list.SelectedValue = Request.QueryString["A"];
+
+        //        string query = "select (select VENDOR_NAME from HRMS_VENDOR_MASTER where vendor_code = a.VENDOR_NAME) as VENDOR_NAME, VENDOR_NAME as VENDOR_code from hrms_prjct_assg a where PROJECT_ID = '" + ddl_project_list.SelectedValue + "' order by VENDOR_NAME";
+        //        dbcon.FillDDL(ddl_vendor_list, query);
+
+
+        //        ddl_vendor_list.SelectedValue = Request.QueryString["B"];
+
+        //        bindata(ddl_vendor_list.SelectedValue, ddl_project_list.SelectedValue);
+
+        //    }
+        //    if (Request.QueryString.Count == 4)
+        //    {
+        //        ddl_div.SelectedValue = Request.QueryString["A"];
+
+        //        string qry = "select upper(PROJECT_LIST) as PROJECT_LIST, srno from project_list where STATUS = 0 and srno in (select project_id from HRMS_PRJCT_VEN_EMP_ASSG a, emp_master  b where emp_aadhar = aadhar and sub_div = '" + ddl_div.SelectedValue + "')"; //where USER_DEPARTMENT = 'IT'
+        //        dbcon.FillDDL(ddl_project_list, qry);
+
+        //        ddl_project_list.SelectedValue = Request.QueryString["B"];
+
+        //        string query = "select (select VENDOR_NAME from HRMS_VENDOR_MASTER where vendor_code = a.VENDOR_NAME) as VENDOR_NAME, VENDOR_NAME as VENDOR_code from hrms_prjct_assg a where PROJECT_ID = '" + ddl_project_list.SelectedValue + "' order by VENDOR_NAME";
+        //        dbcon.FillDDL(ddl_vendor_list, query);
+
+        //        ddl_months_list.SelectedValue = Request.QueryString["C"];
+
+
+        //        DataSet ds2 = dbcon.FillDDLwithproctext("proc_hrms_mnth", "2", ddl_months_list.SelectedValue);
+
+        //        txt_yr.Text = ds2.Tables[0].Rows[0]["yr"].ToString();
+
+        //        ddl_vendor_list.SelectedValue = Request.QueryString["D"];
+        //        bindata(ddl_vendor_list.SelectedValue, ddl_project_list.SelectedValue);
+
+        //        // ScriptManager.RegisterStartupScript(this, this.GetType(), "onclick", "javascript:window.open( 'AttendanceSystem.aspx?A=" + ddl_div.SelectedValue + "&B=" + ddl_project_list.SelectedValue + "&C=" + ddl_months_list.SelectedValue + "-" + System.DateTime.Now.Year.ToString() + "&D=" + ddl_vendor_list.SelectedValue + "','_Parent','toolbar=no,status=no,resizable=1,scrollbars=1,menubar=no,location=no');", true);
+        //    }
+
+        //}
+        //if (usertype == "L1")
+        //{
+        //    //lbl_sdo.Visible = btn_l1.Visible= true;
+        //}
+        //else if (usertype == "L2")
+        //{
+        //    lbl_l2.Visible = ddl_l2.Visible = btn_l2.Visible = true;
+        //}
+        //else if (usertype == "L3")
+        //{
+        //    lbl_cnm.Visible = ddl_final.Visible = btn_final.Visible = true;
+        //}
+        //else
+        //{
+
+        //}
+
+    }
+
+    [WebMethod]
+    public static IEnumerable bindata(string typ, string vendor, string project)
+    {
+        //DataSet ds = new DataSet();
+        //DataTable dt = new DataTable();
+        //OracleDataAdapter da = new OracleDataAdapter("proc_HRMS_latest_dtl", oracon);
+        //da.SelectCommand.Parameters.Add("P_AADHAR_NO", OracleType.VarChar).Value = vendor;
+        //da.SelectCommand.Parameters.Add("p_PROJECT_ID", OracleType.VarChar).Value = project;
+        //da.SelectCommand.Parameters.Add("p_MONTHS", OracleType.VarChar).Value = ddl_months_list.SelectedValue + "-" + txt_yr.Text; //System.DateTime.Now.Year.ToString()
+        //da.SelectCommand.Parameters.Add("p_type", OracleType.VarChar).Value = "1";
+        //da.SelectCommand.Parameters.Add("p_subdiv", OracleType.VarChar).Value = ddl_div.SelectedValue;
+        //da.SelectCommand.Parameters.Add("p_text", OracleType.VarChar).Value = usertype;
+        //da.SelectCommand.Parameters.Add("p_text2", OracleType.VarChar).Value = "";
+        //da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        //da.SelectCommand.Parameters.Add("v_refcur", OracleType.Cursor).Direction = ParameterDirection.Output;
+        //da.Fill(ds); 
+        //if (ds.Tables[0].Rows.Count > 0)
+        //{
+        //    var result = ds.GetJSON();
+        //    var temp = result.Length;//500000000
+        //    return result;
+        //}
+        //else
+        //{
+
+        //    return "1";
+        //}
+        return "1";
+    }
+
+}
